@@ -1,0 +1,36 @@
+{
+  "name": "@repo/database",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared Mongoose MongoDB connection layer for the Atlas monorepo",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "check-types": "tsc --noEmit",
+    "dev": "tsc --project tsconfig.json --watch",
+    "test": "tsx --test \"src/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@repo/config": "*",
+    "@repo/logger": "*",
+    "mongoose": "^9.7.4"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "*",
+    "@types/node": "^22.15.3",
+    "tsx": "^4.23.0",
+    "typescript": "5.9.2"
+  }
+}
